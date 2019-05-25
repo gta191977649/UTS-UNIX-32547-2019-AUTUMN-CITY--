@@ -1,5 +1,6 @@
-#Perl Regular Expressions
-##Skills Exercises
+# Perl Regular Expressions
+
+## Skills Exercises
 1. Write a perl filter which reads from STDIN and only prints those lines containing a number.Recall that you can terminate input from the keyboard by using control-d. (Hint: You can start with the basic perl filter construct below)
 <pre>
     while (<STDIN>) {
