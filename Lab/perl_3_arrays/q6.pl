@@ -8,15 +8,19 @@ while(<FILE>) {
         # print("Parse $word\n");
         if(!isWordExist($word)) {
             # push( @{ $worldList { $word } }, 0 );
+            # print("push word -> $word\n");
+            chomp($word);
             $worldList{$word} = 1;
         } else {
             # print("$word\n");
+            # print("increase word -> $word\n");
+            chomp($word);
             $worldList{$word} = int($worldList{$word})+1;
         }
         
     }
 }
-printFreq();
+
 sub isWordExist {
     $word = $_[0];
     foreach $key (keys %worldList) {
@@ -28,7 +32,14 @@ sub isWordExist {
 }
 
 sub printFreq {
-    foreach $key (keys %worldList) {
+    foreach my $key (keys %worldList) {
+        # print($key)
         print("$key -> $worldList{$key}\n");
     }
 }
+
+sub main {
+    printFreq();
+}
+
+main();
